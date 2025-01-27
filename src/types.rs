@@ -1,7 +1,7 @@
 use std::collections::HashMap;
 use std::sync::Arc;
-use serde::Deserialize;
 use tokio::sync::Mutex;
+use serde::{Deserialize, Serialize};
 
 #[derive(Clone)]
 pub struct AppState {
@@ -14,3 +14,7 @@ pub struct ShortenRequest {
     pub(crate) url: String
 }
 
+#[derive(Serialize)]
+pub struct ShortenResponse {
+    pub(crate) short_url: String,
+}

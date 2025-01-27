@@ -7,14 +7,14 @@ use axum::extract::State;
 use axum::http::StatusCode;
 use axum::response::IntoResponse;
 use crate::AppState;
-use crate::types::ShortenRequest;
+use crate::types::{ShortenRequest, ShortenResponse};
 use crate::json::save_urls;
 use crate::utils::generate_short_id;
 
 pub async fn shorten_url(
     State(state): State<AppState>,
     Json(body): Json<ShortenRequest>,
-) -> Result<Json<String>, (StatusCode, String)> {
+) -> Result<Json<ShortenResponse>, (StatusCode, String)> {
     let mut urls = state.urls.lock().await;
 
     // generate id for short url
@@ -36,7 +36,8 @@ pub async fn shorten_url(
     }
 
     // send response
-    Ok(Json(format!("{}/{}", state.base_url, id)))
+    let short_url = format!("{}/{}", state.base_url, id);
+    Ok(Json(ShortenResponse { short_url }))
 }
 
 pub async fn redirect_url(
