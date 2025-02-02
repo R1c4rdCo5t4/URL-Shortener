@@ -1,10 +1,51 @@
-# URL Shortener
+<div align="center">
 
-Simple URL shortener web API built using Rust and the Axum web framework
+# URL Shortener 🔗
 
-![](https://skillicons.dev/icons?i=rust)
+**Simple URL shortener web API built using Rust and the Axum web framework**
 
-## How to Use
+[![Rust](https://img.shields.io/badge/Built_with-Rust-orange?logo=rust)](https://www.rust-lang.org/)
+[![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+![GitHub repo size](https://img.shields.io/github/repo-size/R1c4rdCo5t4/url-shortener)
+
+</div>
+
+---
+
+## Running 🚀
+
+### 📋 Prerequisites
+
+- [Rust](https://www.rust-lang.org/)
+- [Postman](https://www.postman.com/) or any other HTTP client
+
+### 🛠️ Setup
+
+1. Clone the repository
+
+```sh
+git clone https://github.com/R1c4rdCo5t4/url-shortener.git
+```
+
+2. Change to the project directory
+
+```sh
+cd url-shortener
+```
+
+3. Build the project
+
+```sh
+cargo build
+```
+
+4. Run the project
+
+```sh
+cargo run
+```
+
+### 🌐 Usage
 
 In a terminal, start the server:
 ```
@@ -26,3 +67,12 @@ The server will respond with a JSON object containing the shortened URL:
 ```
 
 Finally, simply make a GET request to the shortened URL, which the server redirects to the original URL.
+
+
+## 🤝 Contributing
+
+Contributions are welcome! Please open an issue or submit a pull request.
+
+## 📄 License
+
+See [`LICENSE`](/LICENSE) for more information.

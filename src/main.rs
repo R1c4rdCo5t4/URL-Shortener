@@ -3,7 +3,6 @@ mod json;
 mod utils;
 mod types;
 
-use std::collections::HashMap;
 use services::{shorten_url, redirect_url, get_urls};
 use dotenvy::dotenv;
 use std::env;
